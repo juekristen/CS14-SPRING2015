@@ -40,10 +40,10 @@ void listCopy( forward_list <Type> L, forward_list <Type>& P )
 int main()
 {
     forward_list <int> list1;
-    list1.push_front(2);
-    list1.push_front(3);
-    list1.push_front(20);
-    list1.push_front(17);
+    list1.push_front(4);
+    list1.push_front(-1);
+    // list1.push_front(20);
+    // list1.push_front(17);
     
     forward_list <int> list2;
     list2.push_front(12);
@@ -59,6 +59,12 @@ int main()
     cout << primeCount(list2) << endl;
     
     listCopy(list1,list2);
+    
+    forward_list <char> list3;
+    list3.push_front('n');
+    list3.push_front('e');
+    list3.push_front('t');
+    printLots(list3,list1);
     
     // cout << list2.front() << ' ';
     // while(!list2.empty())
