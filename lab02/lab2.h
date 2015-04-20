@@ -139,3 +139,19 @@ class List
             }
         }
 };
+template <typename Type>
+void printLots (forward_list <Type> L,forward_list <int> P)
+{
+    //int count = 0;
+    for(auto it = P.begin(); it != P.end();++it)
+    {
+        int count = 0;
+        if(*it)
+        for(auto its = L.begin(); count <= *it && its != L.end(); ++its, ++count)
+        {
+            if(*it == count)
+            cout << *its << ' ';
+        }
+    }
+    cout << endl;
+}
