@@ -64,17 +64,58 @@ class List
         // void remove_duplicates();
         // void take_out(Node* pre);
         // int sum()const;
+        int size()
+        {
+            int count = 1;
+            Node <T> *curr;
+            if(!head)
+                return 0;
+            for(curr = head -> next; curr!=0; curr = curr -> next)
+            {
+                count ++;
+            }
+            return count;
+        }
         void elementSwap( int pos )
         {
             Node <T> *curr = head;
             Node <T> *temp;
             Node <T> *temp2;
-            if(pos == 0)
+            if(pos < 0 || pos > size()-2)
             {
-                head -> next = curr -> next -> next;
-                curr -> next -> next = head;
-                head = curr -> next;
                 return;
+            }
+            else if(pos == 0)
+            {
+                temp = curr -> next;
+                curr -> next = temp -> next;
+                temp -> next = head;
+                head = temp;
+                return;
+            }
+            else if(pos == size()-2)
+            {
+                for (int i = 0 ; i < pos; ++i)
+                {
+                    temp = curr -> next;
+                    temp2 = curr-> next -> next ->next;
+                    if(i == pos - 1)
+                    {
+                        curr -> next = curr -> next -> next;
+                        curr -> next -> next = temp;
+                        curr -> next -> next -> next= 0;
+                        tail = temp;
+                    }
+                    
+                    curr = curr -> next;
+                }
+                return;
+                    // temp = curr -> next
+                    // curr -> next = curr -> next -> next;
+                    // curr -> next -> next = temp;
+                    // if(pos == size() - 2)
+                    // curr -> next -> next -> next= 0;
+                    // tail = 
             }
             
             //curr -> next -> next -> next  = curr -> next -> next;
@@ -91,7 +132,7 @@ class List
                 {
                     curr -> next = curr -> next -> next;
                     curr -> next -> next = temp;
-                    curr -> next -> next -> next= temp2;
+                    curr -> next -> next -> next = temp2;
                 }
                 
                 curr = curr -> next;
