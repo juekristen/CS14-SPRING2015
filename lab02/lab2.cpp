@@ -83,10 +83,12 @@ int main()
     k.push_front(1);
     k.push_front(0);
     
+    cout << k.size() << endl;
+    
     k.display();
     cout << endl;
     
-    k.elementSwap(0);
+    k.elementSwap(3);
     k.display();
     cout << endl;
     return 0;
