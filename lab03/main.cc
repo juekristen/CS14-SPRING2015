@@ -8,6 +8,7 @@ int main()
     list1.pushStack1(1);
     list1.pushStack2(4);
     list1.pushStack2(5);
+    cout << list1.popStack1() << endl;
     list1.display();
     
     TwoStackOptimal<int> list4(5);
@@ -16,6 +17,7 @@ int main()
     list4.pushFlexStack1(3);
     list4.pushFlexStack1(4);
     list4.pushFlexStack2(5);
+    cout << list4.popFlexStack2() << endl;
     list4.display();
     
     stack<int> list11;
