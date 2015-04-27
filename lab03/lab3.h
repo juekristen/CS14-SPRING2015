@@ -44,7 +44,7 @@ class TwoStackFixed
                 cout << "Cannot pop empty stack:\n";
                 exit(1);
             }
-            T temp = stack1.front();
+            T temp = stack1.top();
             stack1.pop();
             fullarr[MAX] = T();
             return temp;
@@ -56,7 +56,7 @@ class TwoStackFixed
                 cout << "Cannot pop empty stack:\n";
                 exit(1);
             }
-            T temp = stack2.front();
+            T temp = stack2.top();
             stack2.pop();
             fullarr[MAX+1] = T();
             return temp;
@@ -150,7 +150,7 @@ class TwoStackOptimal
                 cout << "Cannot pop empty stack:\n";
                 exit(1);
             }
-            T temp = stack1.front();
+            T temp = stack1.top();
             stack1.pop();
             fullarr[countS1] = T();
             return temp;
@@ -162,9 +162,9 @@ class TwoStackOptimal
                 cout << "Cannot pop empty stack:\n";
                 exit(1);
             }
-            T temp = stack1.front();
-            stack1.pop();
-            fullarr[countS1] = T();
+            T temp = stack2.top();
+            stack2.pop();
+            fullarr[countS2] = T();
             return temp;
         }
         bool isFullStack1()//helper function to check whether first stack is full.
@@ -195,7 +195,7 @@ class TwoStackOptimal
         {
             while(stack1.size()!=0)
             {
-                cout << stack1.top()<< ' ';
+                cout << stack1.top() << ' ';
                 stack1.pop();
             }
             cout << endl;
