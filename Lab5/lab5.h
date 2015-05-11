@@ -7,6 +7,7 @@
 //need to use recursion in order to go through all the elements in the correct
 //order. placed cout statements in certain placesto make sure it was 
 //outputed correctly
+//used flags to determine if a node met certain condtions
 //=====================================================
 // -*- bst.h -*-
 #ifndef BST_H
@@ -167,20 +168,19 @@ class BST
         BST() : count(0), root(nil) {}
         
         void insert( Value X ) { root = insert( X, root ); }
-        Node* insert( Value X, Node* T ) 
-        {
-            // The normal binary-tree insertion procedure ...
-            if ( T == nil ) {
-            T = new Node( X ); // the only place that T gets updated.
-            } else if ( X < T->value ) {
-            T->left = insert( X, T->left );
-            } else if ( X > T->value ) {
-            T->right = insert( X, T->right );
-            } else {
-            T->value = X;
-            }
-            // later, rebalancing code will be installed here
-            return T;
+        Node* insert( Value X, Node* T ) {
+        // The normal binary-tree insertion procedure ...
+        if ( T == nil ) {
+        T = new Node( X ); // the only place that T gets updated.
+        } else if ( X < T->value ) {
+        T->left = insert( X, T->left );
+        } else if ( X > T->value ) {
+        T->right = insert( X, T->right );
+        } else {
+        T->value = X;
+        }
+        // later, rebalancing code will be installed here
+        return T;
         }
         
         void remove( Value X ) { root = remove( X, root ); }
@@ -315,13 +315,14 @@ class BST
         {
             if(currsum  > sum)
             {
-                buffcount = 0;
-                currsum = 0;
+                //buffcount = 0;
+                //currsum = 0;
                 // findSumPathHelper(root,sum,buffer);
-                printCount = 0;
+                //printCount = 0;
+                //buffer[0] = 0;
                 return;
             }
-            else if(currsum  == sum && n->isLeaf())
+            if(currsum  == sum && n->isLeaf())
             {
                 return;
             }
