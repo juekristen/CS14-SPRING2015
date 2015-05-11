@@ -20,10 +20,12 @@ int main()
     k.insert(45);
     k.insert(60);
     k.insert(70);
-    k.preorder();
+    //k.preorder();
+    //k.inorder();
     k.minCover();
     k.displayMinCover();
     k.findSumPath(k.root,80,test);
     k.vertSum(k.root,1,lab);
+
     return 0;
 }
