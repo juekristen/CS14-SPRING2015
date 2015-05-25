@@ -5,7 +5,8 @@
 //Approach: used chrono to test how long each insert or 
 //find took and inputed it into a file. then graphed the
 //representation. for my scrambler I made it so that
-//random strings would be swaped. 
+//random strings would be swaped. to fill the vector 
+//I used inputfile stream to get the data from a file
 //=====================================================
 #include <vector>
 #include <string>
